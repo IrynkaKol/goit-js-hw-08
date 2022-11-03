@@ -3,6 +3,10 @@ import { galleryItems } from './gallery-items';
 // Change code below this line
 
 console.log(galleryItems);
+
+import SimpleLightbox from "simplelightbox";
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const galllery = document.querySelector('.gallery');
 
 
@@ -21,3 +25,12 @@ alt='${description}'>
     .join('');
 
 galllery.insertAdjacentHTML('beforeend', markup);
+
+new SimpleLightbox('.gallery a', {
+    captionsData: "alt",
+    captions: true,
+    captionDelay: 250,
+    captionSelector: 'img',
+    captionPosition: 'button'
+        
+    })
