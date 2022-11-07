@@ -15,8 +15,6 @@ const iframe = document.querySelector('iframe');
     console.error(error)
 });
 
-    player.getVideoTitle().then(function(title) {
-        console.log('title:', title);
-    });
+
 
 
