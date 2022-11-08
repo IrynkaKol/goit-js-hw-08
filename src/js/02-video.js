@@ -9,12 +9,7 @@ const iframe = document.querySelector('iframe');
         }, 1000)
         );
 
-    player
-.setCurrentTime(localStorage.getItem('videoplayer-current-time'))
-.catch(function (error) {
-    console.error(error)
-});
+    
+    player.setCurrentTime(Number(localStorage.getItem('videoplayer-current-time')))
 
-
-
-
+    
