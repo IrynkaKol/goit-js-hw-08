@@ -10,6 +10,17 @@ const iframe = document.querySelector('iframe');
         );
 
     
-    player.setCurrentTime(Number(localStorage.getItem('videoplayer-current-time')))
+        player
+.setCurrentTime(Number(localStorage.getItem('videoplayer-current-time')))
+.catch(function(error) {
+    switch (error.name) {
+        case 'RangeError':
+            console.log('the time was less than 0 or greater than the video’s duration: '+cueTime);
+            break;
 
+        default:
+            console.log('some other error occurred: '+cueTime);
+            break;
+    }
+});
     
