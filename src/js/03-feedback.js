@@ -6,14 +6,14 @@ const message = document.querySelector('textarea[name="message"]');
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
 feedbackForm.addEventListener('input', throttle(e => {
-    const objactToSave = { email: emailvalue, message: message.value };
+    const objactToSave = { email: email.value, message: message.value };
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(objactToSave));
     }, 500)
 );
-feedbackform.addEventListener('submit', e => {
+feedbackForm.addEventListener('submit', e => {
     e.preventDefault();
     console.log({ email: email.value, message: message.value });
-    form.reset();
+    feedbackForm.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
   });
 
