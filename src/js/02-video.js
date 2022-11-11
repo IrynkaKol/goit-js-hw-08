@@ -1,5 +1,5 @@
 import Player from '@vimeo/player';
-import { throttle } from 'lodash';
+import { startCase, throttle } from 'lodash';
 
 const iframe = document.querySelector('iframe');
     const player = new Player(iframe);
@@ -12,7 +12,12 @@ const iframe = document.querySelector('iframe');
     
         player
 .setCurrentTime(Number(localStorage.getItem('videoplayer-current-time')))
-.catch(function(error) {
+.catch(function(e) {
+    
+        console.error(e);
+      })
+    
+     /*
     switch (error.name) {
         case 'RangeError':
             console.log('the time was less than 0 or greater than the video’s duration: '+cueTime);
@@ -22,5 +27,5 @@ const iframe = document.querySelector('iframe');
             console.log('some other error occurred: '+cueTime);
             break;
     }
-});
+});*/
     
